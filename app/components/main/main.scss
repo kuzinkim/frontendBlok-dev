@@ -1,0 +1,237 @@
+.main{
+    width: 100%;
+    background-color: #2A2F36;
+    height: 100vh;
+    min-height: 900px;
+    &__inner{
+       position: relative;
+       border-bottom: 1px solid rgba(191,191,191,0.1);
+       height: calc(100% - 121px);
+        &::before{
+            content: '';
+            position: absolute;
+            right: 100%;
+            width: 100vw;
+            height: 1px;
+            background-color: rgba(191,191,191,0.1);
+            bottom: -1px;;
+        }
+    }
+    &-wrapper{
+        padding-top: 115px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(191,191,191,0.1);
+        position: relative;
+        user-select: none;
+        &::before{
+            content: '';
+            position: absolute;
+            right: 100%;
+            width: 100vw;
+            height: 1px;
+            background-color: rgba(191,191,191,0.1);
+            bottom: -1px;
+        }
+    }
+    &-skills{
+        background: linear-gradient(0deg, rgba(18,192,221,0.05) 0%, rgba(0,0,0,0) 81%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 100%;
+            width: 100vw;
+            background: inherit;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            width: 100vw;
+            background: inherit;
+        }
+        &-wrapper{
+            position: relative;
+            height: 180px;
+            width: 100%;
+        }
+        &__text{
+            --animation-duration: 500ms;
+            display: block;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            -webkit-animation-name: moveUp;
+            animation-name: moveUp;
+            -webkit-animation-duration: calc(var(--animation-duration) * 8);
+            animation-duration: calc(var(--animation-duration) * 8);
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            opacity: 0;
+            color: #12C0DD;
+            &--typescript{
+                animation-delay: var(--animation-duration);
+            }
+            &--ruby{
+                animation-delay: calc(var(--animation-duration) * 2);
+            }
+            &--csharp{
+                animation-delay: calc(var(--animation-duration) * 3);
+            }
+            &--cplusplus{
+                animation-delay: calc(var(--animation-duration) * 4);
+            }
+            &--java{
+                animation-delay: calc(var(--animation-duration) * 5);
+            }
+            &--swift{
+                animation-delay: calc(var(--animation-duration) * 6);
+            }
+            &--php{
+                animation-delay: calc(var(--animation-duration) * 7);
+            }
+        }
+    }
+    &__title{
+        font-family:'JetBrains Mono', sans-serif;
+        font-size: 72px;
+        line-height: 86px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+    }
+    &__text{
+        font-size: 32px;
+        line-height: 48px;
+    }
+    .container{
+        height: 100%;
+        position: relative;
+        padding-left: 110px;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #BFBFBF;
+            opacity: 0.1;
+        }
+    }
+}
+
+.slider{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    &__wrapper{
+        width: 480px;
+        font-family:'JetBrains Mono', sans-serif;
+    }
+    &__item{
+        background-color: #fff;
+        border-bottom: 1px solid #000;
+        color: #2A2F36;
+        padding: 40px 43px 40px 40px;
+        position: relative;
+        cursor: pointer;
+        &-title{
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        &-text{
+            font-family:"Fira sans", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        &-bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 43px;
+        }
+        &-counter{
+            font-size: 36px;
+            line-height: 43px;
+        }
+        &-link{
+            display: inline-block;
+            width: 60px;
+        }
+        &:hover{
+            background-color: #12C0DD;
+            color: #fff;
+            svg{
+                path{
+                    fill: #12C0DD
+                }
+                circle{
+                    stroke: #12C0DD;
+                }
+            }
+        }
+    }
+    &-pagination{
+        position: absolute;
+        right: 64px;
+        height: 121px;
+        padding: 28px 0;
+    }
+    &-button{
+        width: 18px;
+        cursor: pointer;
+        &--prev{
+            transform: rotate(180deg);
+            margin-bottom: 43px;
+        }
+    }
+}
+
+.circle-light{
+    width: 405px;
+    height: 405px;
+    background: #12C0DD;
+    opacity: 0.6;
+    filter: blur(200px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-145px);
+        opacity: 0;
+    }
+}
+
+.swiper-button-disabled{
+    opacity: 0.2;
+}

@@ -46,6 +46,16 @@ img{
     max-width: 100%;
     height: auto;
 }
+svg{
+    width: 100%;
+    display: block;
+}
+
+.fa {
+    font-family: "FontAwesome";
+    color: inherit;
+    padding-left: 10px;
+}
 
 .container {
     width: 1600px;
